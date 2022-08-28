@@ -1,0 +1,59 @@
+﻿@model AspNetCoreWebApplication.Entities.Product
+
+@{
+    ViewData["Title"] = "DetailAsync";
+}
+
+<h1 class="text-center">Ürün Detay</h1>
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="card shadow-sm col-sm-4 ">
+            <img src="/Img/@Model.Image" width="100%" height="300" alt="" />
+
+            <div class="card-body">
+                <div>
+                    <h4 class="text-center">@Model.Name</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Category)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.Category.Name)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Brand)
+                        </dt>
+                        <dd class="col-sm-6">
+                            @Html.DisplayFor(model => model.Brand.Name)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <divclass ="btn-group">
+                        <a asp-action="Edit" asp-area="Admin" asp-controller="Products" asp-route-id="@Model?.Id" class="btn btn-sm btn-outline-secondary">Düzenle</a> |
+                        <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Listeye Geri Dön</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
